@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mad Libs Form</title>
+    <link rel="stylesheet" href="{% static 'madlib_app/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Mad Libs Generator</h1>
+
+    </header>
+
+    <main>
+        <form method="post" action="{% url 'submit_madlib' %}">
+            {% csrf_token %}
+
+            <label for="name">Name:</label>
+            <input type="text" name="name" required>
+
+            <label for="time">Time:</label>
+            <input type="text" name="time" required>
+
+            <label for="noun">Noun:</label>
+            <input type="text" name="noun" required>
+
+            <label for="pronoun">Pronoun:</label>
+            <input type="text" name="pronoun" required>
+
+            <label for="adjective">Adjective:</label>
+            <input type="text" name="adjective" required>
+
+            <label for="place">Place:</label>
+            <input type="text" name="place" required>
+
+            <label for="verb">Verb:</label>
+            <input type="text" name="verb" required>
+
+            <button type="submit">Generate Mad Lib</button>
+        </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mad Libs Result</title>
+    <link rel="stylesheet" href="{% static 'madlib_app/style.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Mad Libs Result</h1>
+
+    </header>
+
+    <main>
+        <div>
+
+            <p>{{ madlib_story }}</p>
+        </div>
+
+
+        <a href="{% url 'madlib_form' %}">Go Back to Form</a>
+    </main>
+</body>
+</html>
