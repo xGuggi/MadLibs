@@ -21,11 +21,9 @@ def madlib_result(request, pk):
 
 def submit_madlib(request):
     if request.method == 'POST':
-
         form = MadLibForm(request.POST or None)
-
         if form.is_valid():
-            form.save()
-            return redirect('madlib_result')
-
-        return render(request, 'madlib_app/madlib_result.html', {'form': form})
+            madlib = form.save()
+            madlib_pk = madlib.pk
+            return redirect('result/', pk=madlib_pk)
+    return render(request, 'madlib_app/madlib_result.html', {'form': form})
