@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mad Lib Template 1</title>
+    <link rel="stylesheet" href="{% static 'madlib_app/style.css' %}">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+{% block body %}
+<h1><a href="{% url 'madlib_form' %}" class="btn btn-primary">Go Back To Generate New Mad Lib</a></h1>
+    <h1>Mad Lib 1</h1>
+    <p>Once upon a time, in a {{ madlib.place }} far, far away, there lived a {{ madlib.adjective }} {{ madlib.noun }} named {{ madlib.name }}.</p>
+    <p>Every day, {{ madlib.pronoun }} would {{ madlib.verb }} under the {{ madlib.adjective }} sun.</p>
+    <p>One {{ madlib.time }}, {{ madlib.name }} decided to explore a mysterious cave near {{ madlib.place }}.</p>
+    <p>Inside the cave, {{ madlib.name }} found a magical {{ madlib.noun }} that granted {{ madlib.pronoun }} three wishes.</p>
+    <p>Excitedly, {{ madlib.name }} wished for {{ madlib.adjective }} wings, the ability to {{ madlib.verb }} underwater, and a lifetime supply of {{ madlib.noun }}.</p>
+    <p>From that day on, {{ madlib.name }} had {{ madlib.adjective }} adventures and lived happily ever after in {{ madlib.place }}.</p>
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mad Lib Template 1</title>
+    <link rel="stylesheet" href="{% static 'madlib_app/style.css' %}">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1><a href="{% url 'madlib_form' %}" class="btn btn-primary">Go Back To Generate New Mad Lib</a></h1>
+    <p>"In a whimsical {{ madlib.time }}, {{ madlib.name }} and {{ madlib.pronoun }} friends decided to go {{ madlib.verb }} in a {{ madlib.adjective }} {{ madlib.place }}. They encountered {{ madlib.adjective }} {{ madlib.noun }} and had a {{ madlib.adjective }} time exploring the {{ madlib.place }}."</p>
+
+</body>
+</html>

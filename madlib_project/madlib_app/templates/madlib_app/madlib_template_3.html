@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mad Lib Template 1</title>
+    <link rel="stylesheet" href="{% static 'madlib_app/style.css' %}">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1><a href="{% url 'madlib_form' %}" class="btn btn-primary">Go Back To Generate New Mad Lib</a></h1>
+    <h1>Mad Lib 3</h1>
+    <p>"In a whimsical {{ madlib.time }}, a curious explorer named {{ madlib.name }}
+        embarked on a quest to uncover the secrets of the enchanted {{ madlib.place }}.
+        Armed with a trusty {{ madlib.adjective }} {{ madlib.noun }}, {{ madlib.name }}
+        ventured through the {{ madlib.adjective }} forest, where {{ madlib.pronoun }}
+        encountered talking {{ madlib.noun }} and mischievous {{ madlib.noun }}. Along the journey,
+        {{ madlib.name }} discovered a hidden {{ madlib.adjective }} {{ madlib.noun }} that granted
+        {{ madlib.pronoun }} the power to {{ madlib.verb }} with animals. Eventually, {{ madlib.name }}
+        reached the heart of the magical {{ madlib.place }}, where a wise {{ madlib.noun }}
+        revealed the ancient prophecy that would change {{ madlib.pronoun }} destiny forever."</p>
+
+</body>
+</html>

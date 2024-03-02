@@ -17,13 +17,14 @@ def madlib_form(request):
 
 
 def madlib_result(request):
-    madlib = Madlib.objects.last()
-    if madlib is None:
-        return render(request, 'madlib_app/madlib_template_1.html')
+    latest_madlib = Madlib.objects.last()
+    if latest_madlib is None:
+        return render(request, 'no_madlibs.html')
     template_number = random.randint(1, 15)
     template_name = f'madlib_app/madlib_template_{template_number}.html'
-    madlib_story = generate_madlib(madlib, template_name)
-    return render(request, 'madlib_result.html', {'madlib_story': madlib_story})
+    madlib_story = generate_madlib(latest_madlib, template_name)
+    # Pass the form data along with the template for rendering
+    return render(request, template_name, {'madlib_story': madlib_story, 'madlib': latest_madlib})
 
 
 def submit_madlib(request):
